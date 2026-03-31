@@ -1,7 +1,5 @@
-from webbrowser import Chrome
 import pandas as pd
 from selenium import webdriver
-from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.chrome.options import Options as ChromeOptions
@@ -16,7 +14,7 @@ options.add_argument('lang=ko_KR')
 
 service = ChromeService(executable_path=ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service, options=options)
-my_section = 0  # 0: Politics, 1: Economic, 2: Social, 3: Culture, 4: World, 5: IT  .....
+my_section = 5  # 0: Politics, 1: Economic, 2: Social, 3: Culture, 4: World, 5: IT  .....
 url = 'https://news.naver.com/section/10{}'.format(my_section)
 driver.get(url)
 
